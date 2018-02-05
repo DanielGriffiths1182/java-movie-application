@@ -11,5 +11,50 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
   </head>
   <body>
-  </body>
+    <div class="container">
+      <h3>Movie Repository</h3>
+      <br>
+        <form action='/index/add' method='post'>
+          <table class='table table-hover table-responsive table-bordered'>
+            <tr>
+              <td><b>Title</b></td>
+              <td><input type='text' name='title' class='form-control'  required/></td>
+            </tr>
+            <tr>
+              <td><b>Director</b></td>
+              <td><input type='text' name='director' class='form-control' required /></td>
+            </tr>
+            <tr>
+              <td>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </td>
+            </tr>
+          </table>
+          <b><c:out value="${danger}"></c:out></b>
+        </form>
+        <h3>Movies</h3>
+        <br>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><b>Title</b></th>
+                <th><b>Director</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach items="${list}" var="movie">
+                <tr>
+                  <td><c:out value="${movie.title}"></c:out></td>
+                  <td><c:out value="${movie.director}"></c:out></td>
+                  <td>
+                    <a href="/index/${movie.id}/delete">
+                      <button type="submit" class="btn btn-primary">Delete Movie</button>
+                    </a>
+                  </td>
+                </tr>
+              </c:forEach>
+            </tbody>
+          </table>
+        </div>
+      </body>
 </html>

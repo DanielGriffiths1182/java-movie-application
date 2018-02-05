@@ -44,5 +44,10 @@ public class MovieController {
   	return new ModelAndView("redirect:/index");
   }
 
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+	 public ModelAndView deleteMovies(@PathVariable long id) {
+	  movieService.deleteMovie(id);
+	    return new ModelAndView("redirect:/index");
+	 }
 
 }
