@@ -1,0 +1,4 @@
+daniel/api/IMovie.class
+daniel/api/Movie.class
+daniel/api/IMovieService.class
+daniel/api/MovieServiceImpl.class
