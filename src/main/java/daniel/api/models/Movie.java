@@ -1,4 +1,4 @@
-package com.daniel.api;
+package daniel.api;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
