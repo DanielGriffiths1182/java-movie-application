@@ -22,5 +22,27 @@ public class MovieController {
 		this.movieService = movieService;
 	}
 
+  @RequestMapping(value="", method=RequestMethod.GET)
+	  public ModelAndView index() {
+	      ModelAndView model = new ModelAndView("index");
+	      model.addObject("list", movieService.listAllMovies());
+	      return model;
+	  }
+
+    @RequestMapping(value="/add", method = RequestMethod.POST)
+  public ModelAndView movieRegister(@ModelAttribute("movie")Movie movie){
+  	ModelAndView model = new ModelAndView("index");
+  	if(movie!=null){
+  	movieService.saveMovie(movie);
+  	model.addObject("notify", "Success");
+
+  	}
+  	else{
+  		model.addObject("error","Error" );
+
+  	}
+  	return new ModelAndView("redirect:/index");
+  }
+
 
 }
