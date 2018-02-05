@@ -1,3 +1,3 @@
 # java-movie-application
 
-**Daniel Griffiths
+*Daniel Griffiths
