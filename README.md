@@ -1,4 +1,4 @@
-# java-movie-application
+# java movie-repo mini-application
 
 *Daniel Griffiths*
 
